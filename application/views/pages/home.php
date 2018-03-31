@@ -1,2 +1,2 @@
 <h2><?= $title ?></h2>
-<p>Welcome to the Discussion Forum application</p>
+<p>Welcome to the Photo Sharer application</p>
