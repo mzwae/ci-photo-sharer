@@ -11,7 +11,7 @@
   </div>
 <?php endif; ?>
 
-<?php if (isset($fail) && fail == false):?>
+<?php if (isset($fail) && $fail == false):?>
   <div class="alert alert-danger">
     <strong>Error uploading image!</strong>
     <?php echo $fail; ?>
@@ -19,9 +19,9 @@
 <?php endif; ?>
 
 <?php echo form_open_multipart('create/do_upload'); ?>
-  <input type="file" name="userfile" size="20">
+  <input class="text-info" type="file" name="userfile" size="20">
   <br>
-  <input type="submit" value="upload">
+  <input class="btn btn-success" type="submit" value="upload">
 <?php echo form_close(); ?>
 <br>
 
