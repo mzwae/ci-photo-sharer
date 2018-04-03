@@ -23,7 +23,7 @@ class Create extends MY_Controller
 
     public function do_upload()
     {
-        $upload_dir = base_url().'assets/upload/';
+        $upload_dir = './assets/upload/';
         do {
             // Generate unique code to create a unique file name
             $code = random_string('alnum', 8);
@@ -73,7 +73,8 @@ class Create extends MY_Controller
             } else {
                 $this->load->view('templates/header');
                 $this->load->view('create/result', $page_data);
-                $this->load->view('templates/header');
+                $this->load->view('templates/footer');
+
             }
         }
     }

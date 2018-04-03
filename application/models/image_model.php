@@ -13,8 +13,8 @@ class Image_model extends CI_Model
             $img_url_code = random_string('alnum', 8);
 
             $this->db->where('img_url_code = ', $img_url_code);
-            $this->db->from(images);
-            $num = $this->db->cout_all_results();
+            $this->db->from('images');
+            $num = $this->db->count_all_results();
         } while ($num >= 1);
 
         $query = "INSERT INTO images (img_url_code, img_image_name, img_dir_name) VALUES (?, ?, ?)";
