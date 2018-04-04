@@ -55,8 +55,10 @@ $route['default_controller'] = 'create';
 $route['404_override'] = '';
 
 $route['create'] = "create/index";
-$route['(:any)'] = "go/index";
 $route['create/do_upload'] = "create/do_upload";
+$route['upload/(:any)'] = 'go/index';
+$route['(:any)'] = "go/index";
+
 
 
 $route['translate_uri_dashes'] = FALSE;

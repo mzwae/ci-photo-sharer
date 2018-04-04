@@ -23,7 +23,7 @@ class Create extends MY_Controller
 
     public function do_upload()
     {
-        $upload_dir = './assets/upload/';
+        $upload_dir = './uploads/';
         do {
             // Generate unique code to create a unique file name
             $code = random_string('alnum', 8);
@@ -58,7 +58,7 @@ class Create extends MY_Controller
             $page_data = array('fail' => $this->upload->display_errors(), 'success' => false);
             $this->load->view('templates/header');
             $this->load->view('create/create', $page_data);
-            $this->load->view('templates/header');
+            $this->load->view('templates/footer');
         } else {
             $image_data = $this->upload->data();
             $page_data['result'] = $this->Image_model->save_image(array('image_name'=>$image_data['file_name'], 'img_dir_name'=>$img_dir_name));
@@ -69,7 +69,7 @@ class Create extends MY_Controller
                 $page_data = array('fail'=>'Upload Error');
                 $this->load->view('templates/header');
                 $this->load->view('create/create', $page_data);
-                $this->load->view('templates/header');
+                $this->load->view('templates/footer');
             } else {
                 $this->load->view('templates/header');
                 $this->load->view('create/result', $page_data);

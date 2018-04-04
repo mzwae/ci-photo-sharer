@@ -2,7 +2,7 @@
   <h1>Photo Sharer</h1>
 </div>
 
-<p>Upload your image...</p>
+<p>Upload your image to share it...</p>
 
 <?php echo validation_errors(); ?>
 <?php if (isset($success) && $success == true): ?>
@@ -11,7 +11,7 @@
   </div>
 <?php endif; ?>
 
-<?php if (isset($fail) && $fail == false):?>
+<?php if (isset($fail) && $fail == true):?>
   <div class="alert alert-danger">
     <strong>Error uploading image!</strong>
     <?php echo $fail; ?>
